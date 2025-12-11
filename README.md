@@ -7,8 +7,8 @@ This plugin provides a Unity playback system for playing encoded sequences using
 
 This project implements a real-time decoder for compressed 3D mesh animation sequences. The plugin has two main components; a C++ dynamic
 library decoder backend, and a c# Unity front end. The c++ backend handles file I/O and sequence decoding. The Unity side is responsible for
-fetching and displaying the mehses in engine. Included with these files are prebuilt plugins for MacOS and Android(Quest 3). The c++ backend code
-if the code needs to be built for another platform.
+fetching and displaying the mehses in engine. Included with these files are prebuilt plugins for MacOS and Android(Quest 3) as well as the c++
+backend source code if the user needs rebuild for another platform.
 
 In addition to the main plugin there is an included script for playing unencoded TVM sequences of .obj files. Instructions for running that
 script can be found at the bottom of this document.
@@ -17,6 +17,7 @@ script can be found at the bottom of this document.
 
 ## Project Structure
 
+```bash
 TVMCUnity/
 ├── CPP_Backend/                 # C++ decoder implementation
 │   ├── src/
@@ -45,10 +46,12 @@ TVMCUnity/
 │       ├── BasicPlayback.cs
 │       ├── NonEncodedObjPlayback.cs
 │       └── TVMPlaybackPlugin.cs
-└── Helper_Converter_Scripts/   # Python utilities
-    ├── npy_to_bin_recursive.py
-    └── subdivider.py
-
+├── Helper_Converter_Scripts/   # Python utilities
+│   ├── npy_to_bin_recursive.py
+│  └── subdivider.py
+├── EncodedExample/                # Encoded example sequence
+│   ├── DancerSequence.zip  
+```
 ## Features
 
 ### Core Decoder (`TVMDecoder`)
@@ -85,6 +88,7 @@ TVMCUnity/
 Sequences are expected to be provided in a zip file. The file structure should
 be as follows:
 
+```bash
 Sequence/
 ├── subsequence_001/
     ├── ...
@@ -93,19 +97,21 @@ Sequence/
 ├── subsequence_003/
     ├── ...
 ├── subsequence_...
+```
 
 **NOTE** Make sure that the parent directy was zipped with the name "Sequence", you can chage
 the name of the file afterwards.
 
 Withen each subsequence folders should be the following files:
-```
+
+```bash
 subsequence_XXX/
 ├── decoded_decimated_reference_mesh_subdivided.obj # Base mesh geometry
 ├── anchor_indices.bin      # Fixed vertex indices
 ├── B_matrix.txt
 ├── T_matrix.txt
 └── delta_trajectories.bin
-
+```
 
 ### Encoding Your Own Sequence
 
