@@ -150,11 +150,11 @@ Adjust window sizes based on available memory:
 Found at TVMCUnity//Unity Files/Scripts/NonEncodedObjPlayback.cs is a script for playing back unencoded
 .obj mesh seqeunces. Usage instructions are as follows:
 
-    1. Copy TVMCUnity//Unity Files/Scripts/NonEncodedObjPlayback.cs into your Unity project.
-    2. Import your .obj sequence into the Unity scene. Ensure that your .obj files are numbered
-        in playback order (the script sorts by object name).
-    3. Create a new tag in Unity to associate with your sequence and tag all sequence meshes.
-    3. Add NonEncodedObjPlayback.cs to a new GameObject.
-    4. Set your desired playback parameters and set sequenceTag to the tag set in step 3.
+1. Copy TVMCUnity//Unity Files/Scripts/NonEncodedObjPlayback.cs into your Unity project.
+2. Import your .obj sequence into the Unity scene. Ensure that your .obj files are numbered
+   in playback order (the script sorts by object name).
+3. Create a new tag in Unity to associate with your sequence and tag all sequence meshes.
+3. Add NonEncodedObjPlayback.cs to a new GameObject.
+4. Set your desired playback parameters and set sequenceTag to the tag set in step 3.
     
 
