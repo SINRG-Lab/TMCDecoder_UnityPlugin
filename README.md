@@ -127,7 +127,7 @@ our plugin. These helper files can be found in the folder TVMCUnity/Helper_Conve
     This helper function is used to subdivide decoded_decimated_reference_mesh.obj to create a reference mesh
     compatible with the playback plugin.
 
-**NOTE** All other that were created from TVMC and ARE NOT listed above in the encoded sequence structure section are not required for
+**NOTE** All other files that were created from TVMC and **are not** listed above in the encoded sequence structure section are not required for
 playback and can be deleted.
 
 
